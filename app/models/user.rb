@@ -8,6 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :orders
+  has_many :shippings
 
   validates :nickname,      presence: true
   validates :date_of_birth, presence: true
