@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @soldout = Order.exists?(item_id: params[:id])
   end
 
   def edit
