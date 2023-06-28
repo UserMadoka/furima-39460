@@ -1,6 +1,6 @@
 class OrderShipping
   include ActiveModel::Model
-  attr_accessor :price, :user_id, :item_id, :postal_code, :city, :addresses, :building, :phone_number, :prefecture_id, :order_id
+  attr_accessor :price, :user_id, :item_id, :postal_code, :city, :addresses, :building, :phone_number, :prefecture_id, :order_id, :token
 
   # 必須のチェック
   with_options presence: true do
@@ -8,6 +8,7 @@ class OrderShipping
       validates :item_id
       validates :city
       validates :addresses
+      validates :token
   end
 
   # 都道府県
