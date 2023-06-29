@@ -14,9 +14,9 @@ class OrderShipping
   # 都道府県
   validates :prefecture_id, numericality: {other_than: 0, message: "can't be blank"}
   # 郵便番号
-  validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
+  validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)"}
   # 電話番号
-  validates :phone_number, format: {with: /\A\d{10,11}\z/, message: "is invalid. 数字だけで入力してください"}
+  validates :phone_number, format: {with: /\A\d{10,11}\z/, message: "is invalid. Input only number"}
 
   def save
     order = Order.create(price: price, user_id: user_id, item_id: item_id)
