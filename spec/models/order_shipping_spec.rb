@@ -22,12 +22,12 @@ RSpec.describe OrderShipping, type: :model do
     it 'postal_codeが空では登録できない' do
       @order_shipping.postal_code = nil
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Postal code is invalid. Enter it as follows (e.g. 123-4567)")
+      expect(@order_shipping.errors.full_messages).to include('Postal code is invalid. Enter it as follows (e.g. 123-4567)')
     end
     it 'postal_codeにハイフンが入っていないと登録できない' do
       @order_shipping.postal_code = '1111111'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Postal code is invalid. Enter it as follows (e.g. 123-4567)")
+      expect(@order_shipping.errors.full_messages).to include('Postal code is invalid. Enter it as follows (e.g. 123-4567)')
     end
     it 'prefecture_idが空では登録できない' do
       @order_shipping.prefecture_id = nil
@@ -47,22 +47,22 @@ RSpec.describe OrderShipping, type: :model do
     it 'phone_numberが空では登録できない' do
       @order_shipping.phone_number = nil
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Phone number is invalid. Input only number")
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it 'phone_numberが9桁以下では登録できない' do
       @order_shipping.phone_number = '123456789'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Phone number is invalid. Input only number")
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it 'phone_numberが12桁以上は登録できない' do
       @order_shipping.phone_number = '123456789012'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Phone number is invalid. Input only number")
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it 'phone_numberは数字のみしか登録できない' do
       @order_shipping.phone_number = '000-0000-0000'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Phone number is invalid. Input only number")
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it 'tokenが空では登録できない' do
       @order_shipping.token = nil
