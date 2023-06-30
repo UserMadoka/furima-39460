@@ -13,6 +13,10 @@ RSpec.describe OrderShipping, type: :model do
       it '正しい情報で購入できること' do
         expect(@order_shipping).to be_valid
       end
+      it 'buildingが空でも購入できること' do
+        @order_shipping.building = ''
+        expect(@order_shipping).to be_valid
+      end
     end
 
     context '購入ができない時' do
