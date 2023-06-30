@@ -37,12 +37,11 @@
 | Column   | Type       | Option                         | 
 | -------- | ---------- | ------------------------------ | 
 | id(PK)   | integer    | null: false                    | 
-| price    | integer    | null: false                    | 
 | user(FK) | references | null: false, foreign_key: true | 
 | item(FK) | references | null: false, foreign_key: true | 
 
 ### Association
-- has_one: address
+- has_one: shipping
 - belongs_to :user
 - belongs_to :item
 
@@ -53,13 +52,11 @@
 | postal_code   | string     | null: false                    | 
 | city          | string     | null: false                    | 
 | addresses     | string     | null: false                    | 
-| building      | string     | null: true                     | 
+| building      | string     |                                | 
 | phone_number  | string     | null: false                    | 
 | prefecture_id | integer    | null: false                    | 
-| user(FK)      | references | null: false, foreign_key: true | 
 | order(FK)     | references | null: false, foreign_key: true | 
 
 ### Association
-- belongs_to :user
 - belongs_to :order
 
