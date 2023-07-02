@@ -78,6 +78,10 @@ group :development do
   gem 'rubocop', require: false
 end
 
+group :production do
+  gem 'unicorn', '6.1.0'
+end
+
 gem "devise"
 gem "mini_magick"
 gem "image_processing", "~> 1.2"
