@@ -55,7 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_25_142211) do
   end
 
   create_table "orders", charset: "utf8", force: :cascade do |t|
-    t.integer "price", null: false
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
@@ -71,12 +70,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_25_142211) do
     t.string "building"
     t.string "phone_number", null: false
     t.integer "prefecture_id", null: false
-    t.bigint "user_id", null: false
     t.bigint "order_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_shippings_on_order_id"
-    t.index ["user_id"], name: "index_shippings_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -103,5 +100,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_25_142211) do
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
   add_foreign_key "shippings", "orders"
-  add_foreign_key "shippings", "users"
 end
